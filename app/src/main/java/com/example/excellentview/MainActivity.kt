@@ -3,6 +3,7 @@ package com.example.excellentview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.excellentview.databinding.ActivityMainBinding
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button.text = "Jalla!"
+        binding.callButton.setOnClickListener {
+            binding.urlContentView.loadUrl("https://duckduckgo.com")
+        }
     }
 }
